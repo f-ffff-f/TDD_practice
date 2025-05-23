@@ -1,4 +1,4 @@
-import { add } from '@/add/add'
+import { add } from '@/basic-practice/add/add'
 
 describe('add', () => {
   it('should add two numbers and return the result', () => {

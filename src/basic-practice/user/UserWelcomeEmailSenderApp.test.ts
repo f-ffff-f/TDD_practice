@@ -1,6 +1,6 @@
-import { IEmailClient } from '@/user/EmailClient'
-import { IUserService } from '@/user/UserService'
-import { UserWelcomeEmailSender } from '@/user/UserWelcomeEmailSenderApp'
+import { IEmailClient } from '@/basic-practice/user/EmailClient'
+import { IUserService } from '@/basic-practice/user/UserService'
+import { UserWelcomeEmailSender } from '@/basic-practice/user/UserWelcomeEmailSenderApp'
 
 // 의존 객체 UserWelcomeEmailSender 테스트
 describe('UserWelcomeEmailSender', () => {
