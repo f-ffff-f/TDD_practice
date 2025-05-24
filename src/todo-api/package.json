@@ -1,0 +1,25 @@
+{
+  "name": "@tdd-practice/todo-api",
+  "version": "1.0.0",
+  "description": "Todo API module for TDD exercises",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest",
+    "test:watch": "vitest --watch"
+  },
+  "keywords": [],
+  "author": "yu ganghyeon",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
+  },
+  "files": [
+    "dist",
+    "*.ts"
+  ]
+}

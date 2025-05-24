@@ -1,12 +1,17 @@
 {
     "name": "tdd-practice",
     "version": "1.0.0",
-    "description": "",
+    "description": "TDD practice monorepo",
     "type": "module",
     "main": "script.js",
+    "workspaces": [
+        "src/basic-practice",
+        "src/todo-api"
+    ],
     "scripts": {
         "test": "vitest",
-        "test:watch": "vitest --watch"
+        "test:watch": "vitest --watch",
+        "build": "pnpm run --filter \"@tdd-practice/*\" build"
     },
     "keywords": [],
     "author": "yu ganghyeon",
