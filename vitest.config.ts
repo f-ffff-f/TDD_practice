@@ -2,7 +2,7 @@ import { defineConfig } from 'vitest/config'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
-  plugins: [tsconfigPaths()],
+  plugins: [tsconfigPaths()], // tsconfig.json 파일에 정의돼있는 path alias 설정을 사용할 수 있게 해줌. 따라서 여러 패키지를 넘나들며 테스트 가능.
   test: {
     globals: true, // describe, it, expect 등을 TypeScript 파일에서 바로 사용
     environment: 'node', // 또는 'jsdom' 등
