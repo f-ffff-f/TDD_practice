@@ -2,7 +2,11 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "rootDir": ".",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "paths": {
+      "@/basic-practice/*": ["./*"]
+    },
+    "types": ["vitest/globals"]
   },
   "include": [
     "add/**/*.ts",

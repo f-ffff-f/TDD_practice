@@ -2,7 +2,11 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "rootDir": ".",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "paths": {
+      "@/todo-api/*": ["./*"]
+    },
+    "types": ["vitest/globals"]
   },
   "include": [
     "**/*.ts"
