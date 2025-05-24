@@ -12,7 +12,6 @@ describe('To-Do API with Isolated Test Instances', () => {
 
   beforeEach(async () => {
     // 각 테스트마다 완전히 새로운 서버 인스턴스 생성
-    // useTestDb: true로 설정하여 독립적인 DB 인스턴스 사용
     server = createTodoServer()
 
     await new Promise<void>(resolve => {

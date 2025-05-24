@@ -71,16 +71,12 @@ export function createTodoServer(): http.Server {
   // 의존성 주입: DB를 스토어에 주입
   const todoStore: ITodoStore = new InMemoryTodoStore(database)
 
-  // 핸들러 인스턴스 생성
-  const handleGetTodos = createHandleGetTodos(todoStore)
-  const handlePostTodos = createHandlePostTodos(todoStore)
-
   // HTTP 서버 생성 및 반환
   return http.createServer((req, res) => {
     if (req.method === 'GET' && req.url === '/todos') {
-      handleGetTodos(req, res)
+      createHandleGetTodos(todoStore)(req, res)
     } else if (req.method === 'POST' && req.url === '/todos') {
-      handlePostTodos(req, res)
+      createHandlePostTodos(todoStore)(req, res)
     } else {
       handleNotFound(req, res)
     }
