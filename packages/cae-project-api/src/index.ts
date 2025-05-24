@@ -1,2 +1,2 @@
 // Main server entry point
-export { app } from '@/presentation/http/server'
+export { app } from '@/1_presentation/http/server'

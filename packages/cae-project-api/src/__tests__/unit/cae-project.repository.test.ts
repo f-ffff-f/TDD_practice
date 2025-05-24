@@ -1,9 +1,9 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import { InMemoryCAEProjectRepository } from '@/infrastructure/repositories/cae-project.repository.impl'
-import { createInMemoryDb } from '@/infrastructure/persistence/in-memory/in-memory.db'
-import type { IInMemoryDb } from '@/infrastructure/persistence/in-memory/in-memory.db.interface'
-import type { CAEProject } from '@/domain/entities/cae-project.types'
-import { CreateProjectCommand } from '@/application/dto/project.commands'
+import { InMemoryCAEProjectRepository } from '@/4_Persistence/repositories/cae-project.repository.impl'
+import { createInMemoryDb } from '@/4_Persistence/persistence/in-memory/in-memory.db'
+import type { IInMemoryDb } from '@/4_Persistence/persistence/in-memory/in-memory.db.interface'
+import type { CAEProject } from '@/3_domain/entities/cae-project.interface'
+import { CreateProjectCommand } from '@/2_application/dto/project.commands'
 
 describe('InMemoryCAEProjectRepository', () => {
   let database: IInMemoryDb

@@ -4,12 +4,12 @@ import {
   createInMemoryDb,
   getSingletonDb,
   type IInMemoryDb,
-} from '@/infrastructure/persistence/index'
-import type { ICAEProjectRepository } from '@/infrastructure/repositories/cae-project.repository.interface'
-import { createGetProjectsHandler } from '@/presentation/http/handlers/get-projects.handler'
-import { createPostProjectsHandler } from '@/presentation/http/handlers/post-projects.handler'
-import { handleNotFound } from '@/presentation/http/handlers/not-found.handler'
-import { ProjectApplicationService } from '@/application/services/project.service'
+} from '@/4_Persistence/persistence/index'
+import type { ICAEProjectRepository } from '@/3_domain/repositories/cae-project.repository.interface'
+import { createGetProjectsHandler } from '@/1_presentation/http/handlers/get-projects.handler'
+import { createPostProjectsHandler } from '@/1_presentation/http/handlers/post-projects.handler'
+import { handleNotFound } from '@/1_presentation/http/handlers/not-found.handler'
+import { ProjectApplicationService } from '@/2_application/services/project.service'
 
 /**
  * CAE 프로젝트 HTTP 서버를 생성합니다.

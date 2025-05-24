@@ -1,8 +1,4 @@
-//--------------------------------
-/**
- * @deprecated
- */
-import { CAEProject } from '@/domain/entities/cae-project.types'
+import { CAEProject } from '@/3_domain/entities/cae-project.interface'
 
 // DTO
 export interface CreateCAEProjectRequest {

@@ -1,9 +1,9 @@
-import type { ICAEProjectRepository } from '@/infrastructure/repositories/cae-project.repository.interface'
+import type { ICAEProjectRepository } from '@/3_domain/repositories/cae-project.repository.interface'
 import type {
   CreateProjectCommand,
   CreateProjectResult,
-} from '@/application/dto/project.commands'
-import { InvalidProjectDataError } from '@/domain/project.errors' // 위에서 정의한 에러
+} from '@/2_application/dto/project.commands'
+import { InvalidProjectDataError } from '@/3_domain/project.errors' // 위에서 정의한 에러
 
 export class ProjectApplicationService {
   // 리포지토리는 생성자를 통해 주입받습니다 (Dependency Injection)

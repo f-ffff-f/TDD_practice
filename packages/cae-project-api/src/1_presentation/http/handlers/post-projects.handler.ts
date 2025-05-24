@@ -1,8 +1,7 @@
 import http from 'node:http'
-import type { ICAEProjectRepository } from '@/infrastructure/repositories/cae-project.repository.interface'
-import { CreateCAEProjectRequest } from '@/presentation/dto/cae-project.dto'
-import { ProjectApplicationService } from '@/application/services/project.service'
-import { CreateProjectCommand } from '@/application/dto/project.commands'
+import { CreateCAEProjectRequest } from '@/1_presentation/dto/cae-project.dto'
+import { ProjectApplicationService } from '@/2_application/services/project.service'
+import { CreateProjectCommand } from '@/2_application/dto/project.commands'
 
 /**
  * POST /projects 엔드포인트를 처리하는 핸들러를 생성합니다.

@@ -1,5 +1,5 @@
 // CAE 프로젝트 API 서버
-import { createCAEProjectServer } from '@/presentation/http/server.factory'
+import { createCAEProjectServer } from '@/1_presentation/http/server.factory'
 
 // 프로덕션용 서버 인스턴스 생성 (싱글턴 DB 사용)
 export const app = createCAEProjectServer()

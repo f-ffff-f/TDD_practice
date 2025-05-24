@@ -1,6 +1,3 @@
-//-------------------------------
-// 도메인 엔티티
-
 export interface CAEProject {
   id: number
   name: string

@@ -2,8 +2,8 @@ import { describe, it, expect, beforeEach, afterEach } from 'vitest'
 import http from 'node:http'
 import type { AddressInfo } from 'node:net'
 import fetch, { type Response } from 'node-fetch'
-import { CAEProject } from '@/domain/entities/cae-project.types'
-import { createCAEProjectServer } from '@/presentation/http/server.factory'
+import { CAEProject } from '@/3_domain/entities/cae-project.interface'
+import { createCAEProjectServer } from '@/1_presentation/http/server.factory'
 
 describe('CAE Project API', () => {
   let server: http.Server

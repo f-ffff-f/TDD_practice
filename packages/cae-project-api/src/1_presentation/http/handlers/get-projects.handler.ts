@@ -1,5 +1,5 @@
 import http from 'node:http'
-import type { ICAEProjectRepository } from '@/infrastructure/repositories/cae-project.repository.interface'
+import type { ICAEProjectRepository } from '@/3_domain/repositories/cae-project.repository.interface'
 
 /**
  * GET /projects 엔드포인트를 처리하는 핸들러를 생성합니다.
