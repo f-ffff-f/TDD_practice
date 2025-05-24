@@ -1,5 +1,5 @@
-import type { Todo, ITodoStore } from './todo.store.interface'
-import type { IInMemoryDb } from './in-memory.db.interface'
+import type { Todo, ITodoStore } from './todo.store.interface.js'
+import type { IInMemoryDb } from './in-memory.db.interface.js'
 
 export class InMemoryTodoStore implements ITodoStore {
   #db: IInMemoryDb
@@ -24,4 +24,4 @@ export class InMemoryTodoStore implements ITodoStore {
 }
 
 // Re-export types for convenience
-export type { ITodoStore, Todo } from './todo.store.interface'
+export type { ITodoStore, Todo } from './todo.store.interface.js'

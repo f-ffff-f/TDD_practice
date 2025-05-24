@@ -1,4 +1,4 @@
-import type { Todo } from './todo.store.interface'
+import type { Todo } from './todo.store.interface.js'
 
 export interface IInMemoryDb {
   todos: Todo[]

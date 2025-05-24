@@ -1,7 +1,9 @@
 import { defineConfig } from 'vitest/config'
 import path from 'path' // Node.js 내장 'path' 모듈을 가져옵니다.
+import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
+  plugins: [tsconfigPaths()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

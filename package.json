@@ -2,12 +2,6 @@
     "name": "tdd-practice",
     "version": "1.0.0",
     "description": "TDD practice monorepo",
-    "type": "module",
-    "main": "script.js",
-    "workspaces": [
-        "src/basic-practice",
-        "src/todo-api"
-    ],
     "scripts": {
         "test": "vitest",
         "test:watch": "vitest --watch",
@@ -23,6 +17,7 @@
         "@vitest/ui": "^3.1.4",
         "node-fetch": "^3.3.2",
         "typescript": "^5.8.3",
+        "vite-tsconfig-paths": "^5.1.4",
         "vitest": "^3.1.4"
     }
 }

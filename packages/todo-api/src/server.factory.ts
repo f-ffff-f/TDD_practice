@@ -1,7 +1,7 @@
 import http from 'node:http'
-import { InMemoryTodoStore, type ITodoStore } from './todo.store'
-import { createInMemoryDb, getSingletonDb } from './in-memory.db'
-import type { IInMemoryDb } from './in-memory.db.interface'
+import { InMemoryTodoStore, type ITodoStore } from './todo.store.js'
+import { createInMemoryDb, getSingletonDb } from './in-memory.db.js'
+import type { IInMemoryDb } from './in-memory.db.interface.js'
 
 // 요청 핸들러 팩토리 함수들
 function createHandleGetTodos(store: ITodoStore) {

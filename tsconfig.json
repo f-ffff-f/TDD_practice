@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ES2020", // 또는 더 최신 버전
+    "target": "ES2022",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "outDir": "./dist",
-    "rootDir": "./src", // 소스 파일 위치에 따라 조정
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-    // ... 기타 설정 ...
-  },
-  "include": ["src/**/*"], // 소스 파일 위치에 따라 조정
-  "exclude": ["node_modules"]
+    "types": ["node"]
+  }
 }

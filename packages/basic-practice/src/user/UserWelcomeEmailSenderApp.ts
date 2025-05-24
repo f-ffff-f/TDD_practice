@@ -1,5 +1,5 @@
-import { IEmailClient } from '@/basic-practice/user/EmailClient'
-import { IUserService } from '@/basic-practice/user/UserService'
+import { IEmailClient } from '@/user/EmailClient'
+import { IUserService } from '@/user/UserService'
 
 export class UserWelcomeEmailSender {
   private userService: IUserService

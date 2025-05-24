@@ -1,4 +1,5 @@
-import { add } from '@/basic-practice/add/add'
+import { add } from '@/add/add'
+import { describe, it, expect } from 'vitest'
 
 describe('add', () => {
   it('should add two numbers and return the result', () => {

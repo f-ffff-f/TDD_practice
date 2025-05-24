@@ -1,5 +1,5 @@
 // src/todo-api/server.ts
-import { createTodoServer } from './server.factory'
+import { createTodoServer } from './server.factory.js'
 
 // 프로덕션용 서버 인스턴스 생성 (싱글턴 DB 사용)
 export const app = createTodoServer()
