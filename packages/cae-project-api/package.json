@@ -1,0 +1,25 @@
+{
+    "name": "@tdd-practice/cae-project-api",
+    "version": "1.0.0",
+    "description": "CAE Project API module for TDD exercises",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "start": "node dist/index.js",
+        "build": "tsc",
+        "test": "vitest",
+        "test:watch": "vitest --watch"
+    },
+    "keywords": [
+        "cae",
+        "simulation",
+        "api",
+        "tdd"
+    ],
+    "author": "yu ganghyeon",
+    "license": "ISC",
+    "files": [
+        "dist",
+        "*.ts"
+    ]
+}
