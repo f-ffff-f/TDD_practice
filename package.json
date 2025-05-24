@@ -6,7 +6,8 @@
     "scripts": {
         "test": "vitest",
         "test:watch": "vitest --watch",
-        "build": "pnpm run --filter \"@tdd-practice/*\" build"
+        "build": "pnpm run --filter \"@tdd-practice/*\" build",
+        "typecheck": "pnpm -r typecheck"
     },
     "keywords": [],
     "author": "yu ganghyeon",

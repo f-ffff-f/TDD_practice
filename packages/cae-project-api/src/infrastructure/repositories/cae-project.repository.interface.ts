@@ -1,12 +1,9 @@
-import type { CAEProject } from '@/cae-project.types.js'
+import { CreateProjectCommand } from '@/application/dto/project.commands'
+import type { CAEProject } from '@/domain/entities/cae-project.types'
 
-export interface ICAEProjectStore {
+export interface ICAEProjectRepository {
   getAllProjects(): CAEProject[]
-  addProject(
-    name: string,
-    description: string,
-    type: CAEProject['type']
-  ): CAEProject
+  addProject(command: CreateProjectCommand): CAEProject
   // 향후 확장 가능한 메서드들
   // getProjectById(id: number): CAEProject | undefined
   // updateProject(id: number, updates: Partial<CAEProject>): CAEProject | undefined

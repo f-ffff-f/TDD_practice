@@ -2,8 +2,8 @@ import { describe, it, expect, beforeEach, afterEach } from 'vitest'
 import http from 'node:http'
 import type { AddressInfo } from 'node:net'
 import fetch, { type Response } from 'node-fetch'
-import { CAEProject } from '@/cae-project.types'
-import { createCAEProjectServer } from '@/server.factory'
+import { CAEProject } from '@/domain/entities/cae-project.types'
+import { createCAEProjectServer } from '@/presentation/http/server.factory'
 
 describe('CAE Project API', () => {
   let server: http.Server
@@ -53,6 +53,7 @@ describe('CAE Project API', () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newProjectPayload),
       })
+
       const createdProject = (await response.json()) as CAEProject
 
       expect(response.status).toBe(201)

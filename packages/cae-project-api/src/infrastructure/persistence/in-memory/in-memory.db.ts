@@ -1,4 +1,4 @@
-import type { IInMemoryDb } from '@/in-memory.db.interface.js'
+import type { IInMemoryDb } from '@/infrastructure/persistence/in-memory/in-memory.db.interface'
 
 /**
  * 새로운 인메모리 데이터베이스 인스턴스를 생성합니다.
