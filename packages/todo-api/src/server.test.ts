@@ -3,8 +3,8 @@ import { describe, it, expect, beforeEach, afterEach } from 'vitest'
 import http from 'node:http'
 import type { AddressInfo } from 'node:net'
 import fetch, { type Response } from 'node-fetch'
-import { createTodoServer } from './server.factory.js'
-import type { Todo } from './todo.store.interface.js'
+import { createTodoServer } from '@/server.factory'
+import type { Todo } from '@/todo.store.interface'
 
 describe('To-Do API with Isolated Test Instances', () => {
   let server: http.Server
