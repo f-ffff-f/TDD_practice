@@ -25,12 +25,12 @@ export function createCAEProjectServer(): http.Server {
   const projectRepository: ICAEProjectRepository =
     new InMemoryCAEProjectRepository(database)
 
+  // 애플리케이션 서비스 생성
+  const projectService = new ProjectApplicationService(projectRepository)
+
   // 핸들러들 생성
   const getProjectsHandler = createGetProjectsHandler(projectRepository)
-  const postProjectsHandler = createPostProjectsHandler(
-    // projectRepository,
-    new ProjectApplicationService(projectRepository)
-  )
+  const postProjectsHandler = createPostProjectsHandler(projectService)
 
   // HTTP 서버 생성 및 반환
   return http.createServer((req, res) => {

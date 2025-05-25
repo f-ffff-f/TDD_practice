@@ -25,11 +25,7 @@ import type { CAEProject } from '@/3_domain/entities/cae-project.interface'
 // 의존관계 역전. Domain layer가 원래의 의존방향을 역전하여 자기 자신이 정의한 인터페이스를 Persistence layer가 구현하게 하고 자기자신은 Persistence layer의 구현에 의존하지 않음(둘 다 서로의 구현을 전혀 알지 못함).
 export interface ICAEProjectRepository {
   getAllProjects(): CAEProject[]
-  addProject(command: {
-    name: string
-    description: string
-    type: CAEProject['type']
-  }): CAEProject
+  addProject(projectData: Omit<CAEProject, 'id'>): CAEProject
   // 향후 확장 가능한 메서드들
   // getProjectById(id: number): CAEProject | undefined
   // updateProject(id: number, updates: Partial<CAEProject>): CAEProject | undefined

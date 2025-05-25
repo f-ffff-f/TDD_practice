@@ -4,6 +4,7 @@ import { createInMemoryDb } from '@/4_Persistence/persistence/in-memory/in-memor
 import type { IInMemoryDb } from '@/4_Persistence/persistence/in-memory/in-memory.db.interface'
 import type { CAEProject } from '@/3_domain/entities/cae-project.interface'
 import { CreateProjectCommand } from '@/2_application/dto/project.commands'
+import { createCAEProject } from '@/3_domain/factories/cae-project.factory'
 
 describe('InMemoryCAEProjectRepository', () => {
   let database: IInMemoryDb
@@ -54,7 +55,7 @@ describe('InMemoryCAEProjectRepository', () => {
         type: 'fluid' as const,
       }
 
-      const project = repository.addProject(command)
+      const project = repository.addProject(createCAEProject(command))
 
       expect(project).toMatchObject({
         id: 1,
@@ -74,13 +75,13 @@ describe('InMemoryCAEProjectRepository', () => {
         description: 'Description 1',
         type: 'structural' as const,
       }
-      const project1 = repository.addProject(command1)
+      const project1 = repository.addProject(createCAEProject(command1))
       const command2: CreateProjectCommand = {
         name: 'Project 2',
         description: 'Description 2',
         type: 'fluid' as const,
       }
-      const project2 = repository.addProject(command2)
+      const project2 = repository.addProject(createCAEProject(command2))
 
       expect(project1.id).toBe(1)
       expect(project2.id).toBe(2)
@@ -92,7 +93,7 @@ describe('InMemoryCAEProjectRepository', () => {
         description: 'Test Description',
         type: 'thermal' as const,
       }
-      const project = repository.addProject(command)
+      const project = repository.addProject(createCAEProject(command))
 
       expect(database.projects).toHaveLength(1)
       expect(database.projects[0]).toEqual(project)
@@ -104,7 +105,7 @@ describe('InMemoryCAEProjectRepository', () => {
         description: 'Test Description',
         type: 'coupled' as const,
       }
-      const project = repository.addProject(command)
+      const project = repository.addProject(createCAEProject(command))
       const storedProject = database.projects[0]
 
       expect(project).not.toBe(storedProject) // Different references

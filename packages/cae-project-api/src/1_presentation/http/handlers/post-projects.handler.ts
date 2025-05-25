@@ -5,7 +5,7 @@ import { CreateProjectCommand } from '@/2_application/dto/project.commands'
 
 /**
  * POST /projects 엔드포인트를 처리하는 핸들러를 생성합니다.
- * @param repository - CAE 프로젝트 저장소 인터페이스
+ * @param projectService - 프로젝트 애플리케이션 서비스
  * @returns HTTP 요청 핸들러 함수
  */
 export function createPostProjectsHandler(

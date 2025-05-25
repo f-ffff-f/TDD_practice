@@ -4,6 +4,7 @@ import type {
   CreateProjectResult,
 } from '@/2_application/dto/project.commands'
 import { InvalidProjectDataError } from '@/3_domain/project.errors' // 위에서 정의한 에러
+import { createCAEProject } from '@/3_domain/factories/cae-project.factory' // Import the factory
 
 export class ProjectApplicationService {
   // 리포지토리는 생성자를 통해 주입받습니다 (Dependency Injection)
@@ -44,16 +45,15 @@ export class ProjectApplicationService {
       throw new InvalidProjectDataError(validationErrors)
     }
 
-    // (선택적) 도메인 엔티티/팩토리 사용 고려
-    // 여기서는 리포지토리의 addProject가 엔티티 생성 책임을 일부 가진다고 가정하고 진행합니다.
-    // 만약 CAEProject 엔티티에 `CAEProject.create(...)`와 같은 팩토리 메소드가 있다면,
-    // const projectEntity = CAEProject.create(command.name.trim(), command.description, command.type);
-    // const newProject = await this.projectRepository.addProject(projectEntity);
-    // 와 같이 사용할 수 있습니다. 현재는 리포지토리 인터페이스에 맞춰 진행합니다.
+    // 2. Use the factory to create the project entity
+    const projectEntity = createCAEProject({
+      name: command.name.trim(), // Ensure name is trimmed as per original logic in service
+      description: command.description,
+      type: command.type,
+    })
 
-    // 2. 리포지토리를 통해 프로젝트 생성 요청
-    // 현재 ICAEProjectRepository의 addProject 메소드는 name, description, type을 직접 받습니다.
-    const newProject = this.projectRepository.addProject(command)
+    // 3. 리포지토리를 통해 프로젝트 생성 요청
+    const newProject = this.projectRepository.addProject(projectEntity)
 
     // 3. 결과 반환
     // 여기서는 생성된 프로젝트 객체를 그대로 반환합니다.
